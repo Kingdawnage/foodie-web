@@ -4,7 +4,7 @@ env:
   NEXT_PUBLIC_SUPABASE_URL: https://wtzgcdichgezejjnmzly.supabase.co
   NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind0emdjZGljaGdlemVqam5temx5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkwNzg0NDMsImV4cCI6MjAzNDY1NDQ0M30.rl_KisHIVxHob9TXOGHej8gJPKdE0is2RSEEj6SrtN4
   NEXT_TELEMETRY_DISABLED: 1
-on: [push]
+on: [push, pull_request]
 jobs:
   format:
     name: Format
