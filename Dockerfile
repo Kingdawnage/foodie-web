@@ -24,15 +24,10 @@ COPY . .
 ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED 1
 # todo: add here after adding supabase
-# ARG NEXT_PUBLIC_SUPABASE_URL
-# ARG NEXT_PUBLIC_SUPABASE_ANON_KEY
-
-# Using BuildKit secrets
-RUN --mount=type=secret,id=supabase_url \
-    --mount=type=secret,id=supabase_anon_key \
-    NEXT_PUBLIC_SUPABASE_URL=$(cat /run/secrets/supabase_url) \
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=$(cat /run/secrets/supabase_anon_key) \
-    bun run build
+# ENV NEXT_PUBLIC_SUPABASE_URL 
+# ENV NEXT_PUBLIC_SUPABASE_ANON_KEY 
+# RUN bun run test #todo: add here after adding tests
+RUN bun run build
 
 # copy production dependencies and source code into final image
 FROM base AS release
