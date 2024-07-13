@@ -1,8 +1,8 @@
-import { createClient } from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/client";
 
 export default async function Home() {
   const supabase = createClient();
-  const { data: test } = await (await supabase).from("test").select("test");
+  const { data: test } = await supabase.from("test").select("test");
   console.log("test: ", test);
 
   if (!test) return <>Something bad happened while connection</>;
